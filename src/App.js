@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Switch, Route, BrowserRouter, Redirect } from 'react-router-dom'
+import Dashboard from './components/Dashboard'
+import Login from './components/Login'
+import PrivateRoute from './PrivateRoute'
+import './App.css'
+class App extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            loggedIn: false,
+            user: {},
+        }
+    }
+    componentDidMount = () => {
+        const user = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {}
+        const loggedIn = !!localStorage.getItem('user')
+        this.setState({ user, loggedIn })
+    }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    render() {
+        return (
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/">
+                        {() => (this.state.loggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/login" />)}
+                    </Route>
+                    <Route path="/login" component={Login} />
+                    <PrivateRoute path="/dashboard" component={Dashboard} />
+                    <Route path="*" render={() => <h2>404 NOT FOUND</h2>} />
+                </Switch>
+            </BrowserRouter>
+        )
+    }
+
 }
 
-export default App;
+export default App
+  
+
+
+
+
+
+{/* <Route path="/login" render={(props) => <Login {...props} exact={true} />} />  */}
