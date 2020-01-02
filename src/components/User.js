@@ -23,7 +23,7 @@ class User extends React.Component {
         const { user, isLoading } = this.state
         if (isLoading) return <h2>Loading...</h2>
         return (
-            <div className="user animated fadeInUp fast" >
+            <div className="user animated fadeInDown fast" >
                 <div className="userDetail">
                     <h3>{user.name}</h3>
                     <h4>{user.email}</h4>
