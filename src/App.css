@@ -5,6 +5,7 @@ html, body {
 
 h1, h2, h3 {
     font-family: 'Dosis', sans-serif;
+    color: #5995DA;
 }
 
 h4, h5, h5, p {
@@ -37,31 +38,39 @@ h4, h5, h5, p {
     height: 20px;
     width: 100%;
     align-items: center;
-    border: solid 1px;
-    background-color: rgb(77, 77, 77);
+    /* border: solid 1px; */
+    background-color: rgb(88, 88, 88);
     color: #F3F3F3;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.6);
+    z-index: 999;
 }
 
 .header-fixed {
     position: sticky;
     top: 0;
-    width: 96.6%;
- }
+    width: 96.7%;
+}
 
- @media only screen and (max-width: 768px) {
+.header>h3 {
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
     /* For mobile phones: */
     [class*="header-fixed"] {
-      width: 86%;
+        width: 87%;
     }
-  }
+}
 
 .user {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(196, 196, 196);
+    background-color: #EEEEEE;
     margin-top: 20px;
     border: solid 1px;
+    border-radius: 7px;
     padding: 25px;
 }
 
@@ -77,10 +86,11 @@ h4, h5, h5, p {
     padding: 20px;
     margin-top: 20px;
     border: solid 1px;
+    border-radius: 7px;
 }
 
 .post {
-    background-color: rgb(196, 196, 196);
+    background-color: #EEEEEE;
     padding: 10px;
     margin-top: 10px;
     border: solid 1px;

@@ -6,7 +6,7 @@ export default function Header(props) {
         props.history.push("/login");
     }
     return (
-        <div className="header header-fixed">
+        <div style={{color:'white'}} className="header header-fixed animated flipInX">
             <h3>DashBoard</h3>
             <button onClick={logout}>logout</button>
         </div>

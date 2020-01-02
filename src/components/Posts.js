@@ -24,10 +24,10 @@ class Posts extends React.Component {
         const { posts, isLoading } = this.state
         if (isLoading) return <h2>Loading...</h2>
         return (
-            <div className="posts">
+            <div className="posts animated fadeInUp ">
                 {posts.map(post => {
                     return (
-                        <div key={post.id} className="post">
+                        <div key={post.id} className="post animated fadeInUp fast">
                             <h3>{post.title}</h3>
                             <h4>{post.body}</h4>
                         </div>

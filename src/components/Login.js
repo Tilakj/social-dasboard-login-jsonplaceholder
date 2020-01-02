@@ -43,7 +43,7 @@ class Login extends Component {
                     <h2>Login</h2>
                     <input style={{margin:'10px'}} type="text" placeholder="email id" value={userMailId} onChange={this.handleChange}></input>
                     <input style={{margin:'10px'}} type="submit" value="Login"></input>
-                    {error && <p style={{color:'red'}}>{error}</p>}
+                    {error && <p className="animated slideInDown fast"style={{color:'red'}}>{error}</p>}
                 </form>
             </div>
         )
